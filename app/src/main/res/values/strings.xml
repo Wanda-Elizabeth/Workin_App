@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">keeptrackLog</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="Signup">Don\'t have an account?<u>Sign Up</u></string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_an_account">Don\'t have an account/sign_up<u>Sign Up</u></string>
 </resources>
