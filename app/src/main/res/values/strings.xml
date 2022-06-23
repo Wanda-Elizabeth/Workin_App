@@ -12,4 +12,6 @@
     <string name="lastnamee">Last Name</string>
     <string name="sign_up">Sign Up</string>
     <string name="Have_an_account_log_in">have an account log in?<u>Log In</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
