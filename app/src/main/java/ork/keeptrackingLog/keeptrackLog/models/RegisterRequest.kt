@@ -1,4 +1,4 @@
-package ork.liesa.keeptrackLog.models
+package ork.keeptrackingLog.keeptrackLog.models
 
 import com.google.gson.annotations.SerializedName
 

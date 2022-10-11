@@ -1,4 +1,4 @@
-package ork.liesa.keeptrackLog
+package ork.keeptrackingLog.keeptrackLog
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

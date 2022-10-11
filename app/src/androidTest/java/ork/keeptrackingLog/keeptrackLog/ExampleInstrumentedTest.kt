@@ -1,4 +1,4 @@
-package ork.liesa.keeptrackLog
+package ork.keeptrackingLog.keeptrackLog
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

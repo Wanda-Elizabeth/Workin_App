@@ -1,4 +1,4 @@
-package ork.liesa.keeptrackLog.models
+package ork.keeptrackingLog.keeptrackLog.models
 
 data class LoginRequest(
     var email:String,

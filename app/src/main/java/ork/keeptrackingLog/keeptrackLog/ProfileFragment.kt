@@ -1,4 +1,4 @@
-package ork.liesa.keeptrackLog
+package ork.keeptrackingLog.keeptrackLog
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

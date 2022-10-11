@@ -1,21 +1,16 @@
-package ork.liesa.keeptrackLog
+package ork.keeptrackingLog.keeptrackLog
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import ork.keeptrackingLog.keeptrackLog.models.RegisterRequest
+import ork.keeptrackingLog.keeptrackLog.models.UserViewModel
 import ork.liesa.keeptrackLog.databinding.ActivitySignUpBinding
-import ork.liesa.keeptrackLog.models.RegisterRequest
-import ork.liesa.keeptrackLog.models.Registerresponse
-import ork.liesa.keeptrackLog.uI.ApiClient
-import ork.liesa.keeptrackLog.uI.ApiInterface
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -30,6 +25,10 @@ class SignUpActivity : AppCompatActivity() {
         }
         binding.btnSignup.setOnClickListener {
             validateSignUp()
+        }
+        override fun onResume() {
+            super.onResume()
+            UserViewModel.register
         }
     }
 
@@ -67,31 +66,32 @@ class SignUpActivity : AppCompatActivity() {
         if (!error) {
             binding.pvRegister.visibility = View.VISIBLE
             var registerRequest = RegisterRequest(name, last,phoneNumber, email1, password1)
-            makeReqistrationRequest(registerRequest)
+            UserViewModel=
+
         }
 
     }
 
-    fun makeReqistrationRequest(requesterRequest: RegisterRequest) {
-        var apiClient = ApiClient.buildApiClient(ApiInterface::class.java)
-        var request = apiClient.registerUser(requesterRequest)
-
-        request.enqueue(object : Callback<Registerresponse> {
-            override fun onResponse(call: Call<Registerresponse>, response: Response<Registerresponse>) {
-                binding.pvRegister.visibility=View.GONE
-                        var message =response.body()?.message
-                        Toast.makeText(baseContext,message,Toast.LENGTH_LONG).show()
-                        startActivity(Intent(baseContext,LogInActivity::class.java))
-
-            }
-
-            override fun onFailure(call: Call<Registerresponse>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
-
-            }
-
-        })
-    }
+//    fun makeReqistrationRequest(requesterRequest: RegisterRequest) {
+//        var apiClient = ApiClient.buildApiClient(ApiInterface::class.java)
+//        var request = apiClient.registerUser(requesterRequest)
+//
+//        request.enqueue(object : Callback<Registerresponse> {
+//            override fun onResponse(call: Call<Registerresponse>, response: Response<Registerresponse>) {
+//                binding.pvRegister.visibility=View.GONE
+//                        var message =response.body()?.message
+//                        Toast.makeText(baseContext,message,Toast.LENGTH_LONG).show()
+//                        startActivity(Intent(baseContext,LogInActivity::class.java))
+//
+//            }
+//
+//            override fun onFailure(call: Call<Registerresponse>, t: Throwable) {
+//                Toast.makeText(baseContext, t.message, Toast.LENGTH_LONG).show()
+//
+//            }
+//
+//        })
+//    }
 }
 
 
